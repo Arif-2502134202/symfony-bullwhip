@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pesanan{% endblock %}
+
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div class="container">
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <div class="text-center">
+                User : {{ app.session.get('userName') }} : {{ app.session.get('roleName') }}
+            </div>
+            <a href="{{ path('app_pesanan_index') }}" class="btn btn-primary">Pemesanan</a>
+            <a href="{{ path('app_pesanan_barang') }}" class="btn btn-primary">Barang</a>
+            <a href="{{ path('app_logout_index') }}" class="btn btn-secondary">Sign Out</a>
+        </div>
+    </div>  
+  </div>
+</div>
+{% endblock %}

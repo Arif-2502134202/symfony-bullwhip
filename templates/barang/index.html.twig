@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Barang{% endblock %}
+
+{% block body %}
+<div class="container">
+  <div class="row">
+    {% include 'navbar/adminNavbar.html.twig' %}   
+    <div class="col-12">
+    
+    <h3>Data Barang</h3>
+
+    <a href="{{ path('app_barang_new') }}" class="btn btn-sm btn-primary me-2">Tambah Data</a>
+
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nama</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for barang in barangs %}
+            <tr>
+                <td>{{ barang.id }}</td>
+                <td>{{ barang.nama }}</td>
+                <td>
+                    <a href="{{ path('app_barang_edit', {'id': barang.id}) }}" class="btn btn-sm btn-success me-2">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

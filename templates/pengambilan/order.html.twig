@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pesanan{% endblock %}
+
+{% block body %}
+<div class="container">
+  <div class="row">
+  {% include 'navbar/pengambilanNavbar.html.twig' %} 
+
+    <div class="col-12"> 
+    <h3>Data Pesanan</h3>
+
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Pemesan</th>
+                <th>Barang</th>
+                <th>Jumlah Pesanan</th>
+                <th>Jumlah Produksi</th>
+                <th>Proses</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pesanan in pesanans %}
+            <tr>
+                <td>{{ pesanan.id }}</td>
+                <td>{{ pesanan.pemesan }}</td>
+                <td>{{ pesanan.namabarang }}</td>
+                <td>{{ pesanan.jumlahpesanan }}</td>
+                <td>{{ pesanan.jumlahproduksi }}</td>
+                <td>
+                    <a href="{{ path('app_pengambilan_new', {'id': pesanan.id}) }}" class="btn btn-sm btn-success me-2">Ambil</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

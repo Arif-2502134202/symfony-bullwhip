@@ -1,0 +1,15 @@
+<nav class="navbar">
+  <form class="container-fluid justify-content-start">
+    <a href="{{ path('app_barang_home') }}" class="btn btn-sm btn-success me-2">Home</a>
+    <a href="{{ path('app_barang_index') }}" class="btn btn-sm btn-success me-2">Barang</a>
+    <a href="{{ path('app_staff_index') }}" class="btn btn-sm btn-success me-2">Data Karyawan</a>
+    <a href="{{ path('app_roles_index') }}" class="btn btn-sm btn-success me-2">Data Roles</a>
+    <a href="{{ path('app_logout_index') }}" class="btn btn-sm btn-secondary">Sign Out</a>
+     
+    <div class="text-center">
+    User : {{ app.session.get('userName') }}
+    </div>  
+  </form>
+  
+    
+</nav>

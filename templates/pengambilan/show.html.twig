@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pengambilan{% endblock %}
+
+{% block body %}
+    <h1>Pengambilan</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ pengambilan.id }}</td>
+            </tr>
+            <tr>
+                <th>Pengambil</th>
+                <td>{{ pengambilan.pengambil }}</td>
+            </tr>
+            <tr>
+                <th>Jumlah</th>
+                <td>{{ pengambilan.jumlah }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_pengambilan_index') }}">back to list</a>
+
+    <a href="{{ path('app_pengambilan_edit', {'id': pengambilan.id}) }}">edit</a>
+
+    {{ include('pengambilan/_delete_form.html.twig') }}
+{% endblock %}

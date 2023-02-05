@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produksi{% endblock %}
+
+{% block body %}
+<div class="container">
+  <div class="row">
+  {% include 'navbar/manajerNavbar.html.twig' %} 
+
+    <div class="col-12"> 
+    <h3>Data Produksi</h3>
+ 
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>Nama Barang</th>
+                <th>Deviasi Pesanan</th>
+                <th>Mean pesanan</th>
+                <th>Deviasi Produksi</th>
+                <th>Mean Produksi</th>
+                <th>Lead Time</th>
+                <th>BE</th>
+                <th>Parameter</th>
+                <th>Bullwhip Effect</th>
+            </tr>
+        </thead>
+        <tbody>
+       
+        {% for barang in barangs %}
+       
+            <tr>
+                <td>{{ barang.nama }}</td>
+                <td>{{ barang.s_order }}</td>
+                <td>{{ barang.mean_order }}</td>
+                <td>{{ barang.s_demand }}</td>
+                <td>{{ barang.mean_demand }}</td>
+                <td>{{ barang.leadtime }}</td>
+                <td>{{ barang.bullwhip }}</td>
+                <td>{{ barang.parameter }}</td>             
+                
+                <td><a href="" class="btn btn-sm btn-success me-2" data-toggle="modal" data-target="#myModal">Solusi Bullwhip</a></td>  
+             
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    
+    </div>
+  </div>
+</div>
+{% include './manajer/modal.html.twig' %} 
+
+{% endblock %}

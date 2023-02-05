@@ -1,0 +1,11 @@
+
+<div class="d-grid gap-2 col-12 mx-auto">
+    <div class="text-center">
+    User : {{ app.session.get('userEmail') }}
+    </div>
+    <a href="{{ path('app_home_index') }}" class="btn btn-sm btn-success me-2">Home</a>
+    <a href="{{ path('app_staff_index') }}" class="btn btn-sm btn-success me-2">Data Karyawan</a>
+    <a href="{{ path('app_roles_index') }}" class="btn btn-sm btn-success me-2">Data Roles</a>
+    <a href="{{ path('app_logout_index') }}" class="btn btn-sm btn-secondary me-2">Sign Out</a>
+</div>
+

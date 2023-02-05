@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Staff{% endblock %}
+
+{% block body %}
+<div class="text-center"><h2>Tambah Data</h2></div>
+<div class="container">
+    <div class="row">
+
+    {{ include('staff/_form.html.twig') }}
+    </div>
+</div>
+    <a href="{{ path('app_staff_index') }}" class="btn btn-secondary btn-sm">kembali</a>
+{% endblock %}

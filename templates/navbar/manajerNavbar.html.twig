@@ -1,0 +1,14 @@
+<nav class="navbar">
+  <form class="container-fluid justify-content-start">
+    <a href="{{ path('app_manajer_home') }}" class="btn btn-sm btn-success me-2">Home</a>
+    <a href="{{ path('app_manajer_index') }}" class="btn btn-sm btn-success me-2">Laporan</a>
+    <a href="{{ path('app_manajer_grafik') }}" class="btn btn-sm btn-success me-2">Grafik</a>
+    <a href="{{ path('app_logout_index') }}" class="btn btn-sm btn-secondary">Sign Out</a>
+     
+    <div class="text-center">
+    User : {{ app.session.get('userName') }}
+    </div>  
+  </form>
+  
+    
+</nav>

@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pengambilan{% endblock %}
+
+{% block body %}
+<div class="text-center"><h2>Tambah Data</h2></div>
+<div class="container">
+    <div class="row">
+    <div class="mb-3 row">
+    <label for="namabarang" class="col-sm-2 col-form-label">Nama Barang</label>
+    <div class="col-sm-4">
+        <input type="text" class="form-control-plaintext" id="namabarang" value="{{barang.nama}}" readonly>
+    </div>
+    </div>
+
+    <form action="{{ path('app_pengambilan_submit')}}" method="GET"> 
+    <div class="mb-3 row">
+    <label for="jumlahpesanan" class="col-sm-2 col-form-label">jumlah Produksi</label>
+    <div class="col-sm-4">
+        <input type="text" class="form-control-plaintext" name="jumlahproduksi" id="jumlahproduksi" value="{{datapesanan.jumlah}}" readonly>
+    </div>
+    </div>
+  
+    <div class="mb-3 row">
+    <label for="idpesanan" class="col-sm-2 col-form-label">ID Pesanan</label>
+    <div class="col-sm-4">
+        <input type="text" class="form-control-plaintext" name="idpesanan" id="idpesanan" value="{{datapesanan.id}}" readonly>
+    </div>
+    </div>
+    <div class="mb-3 row">
+    <label for="pemesan" class="col-sm-2 col-form-label">Pengambil</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control-plaintext" name="pengambil" id="pengambil" value="{{datapesanan.pemesan}}" readonly>
+    </div>
+    </div>
+
+    <div class="mb-3 row">
+    <label for="jumlah" class="col-sm-2 col-form-label">Jumlah Pengambilan</label>
+    <div class="col-sm-4">
+        <input type="number" class="form-control" name="jumlah" id="jumlah" style="max-width:100px;">
+    </div>
+    </div>
+    
+    <button type="submit" class="btn btn-sm btn-success me-2">Save</button>
+   
+    </form>
+    </div>
+
+    
+</div>
+
+    <a href="{{ path('app_pengambilan_index') }}" class="btn btn-sm btn-secondary me-2">back to list</a>
+{% endblock %}

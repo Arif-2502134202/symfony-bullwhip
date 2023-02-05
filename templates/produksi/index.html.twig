@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Produksi{% endblock %}
+
+{% block body %}
+<div class="container">
+  <div class="row">
+  {% include 'navbar/produksiNavbar.html.twig' %} 
+
+    <div class="col-12"> 
+    <h3>Data Produksi</h3>
+ 
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Pemesan</th>
+                <th>Barang</th>
+                <th>Jumlah</th>
+                <th>Leadtime</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+        {% for produksi in produksis %}
+            <tr>
+                <td>{{ produksi.id }}</td>
+                <td>{{ produksi.pemesan }}</td>
+                <td>{{ produksi.namabarang }}</td>
+                <td>{{ produksi.jumlah }}</td>
+                <td>{{ produksi.leadtime }}</td>
+                
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

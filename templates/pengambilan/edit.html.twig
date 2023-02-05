@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Pengambilan{% endblock %}
+
+{% block body %}
+    <h1>Edit Pengambilan</h1>
+
+    {{ include('pengambilan/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('app_pengambilan_index') }}">back to list</a>
+
+    {{ include('pengambilan/_delete_form.html.twig') }}
+{% endblock %}

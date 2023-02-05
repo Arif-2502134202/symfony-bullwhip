@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Roles{% endblock %}
+
+{% block body %}
+<div class="container">
+  <div class="row">
+    {% include 'navbar/adminNavbar.html.twig' %} 
+    
+    <div class="col-12">
+    
+    <h3>Roles</h3>
+
+    <a href="{{ path('app_roles_new') }}" class="btn btn-sm btn-primary me-2">Tambah Data</a>
+    
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for role in roles %}
+            <tr>
+                <td>{{ role.id }}</td>
+                <td>{{ role.name }}</td>
+                <td>{{ role.description }}</td>
+                <td>
+                    <a href="{{ path('app_roles_show', {'id': role.id}) }}" class="btn btn-sm btn-success">show</a>
+                    <a href="{{ path('app_roles_edit', {'id': role.id}) }}" class="btn btn-sm btn-success">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">No Records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+   
+    </div>
+  </div>
+</div>
+
+{% endblock %}

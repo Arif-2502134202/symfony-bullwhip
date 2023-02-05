@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Pesanan{% endblock %}
+
+{% block body %}
+<div class="container">
+  <div class="row">
+  {% include 'navbar/pesananNavbar.html.twig' %} 
+
+    <div class="col-12"> 
+    <h3>Data Pesanan</h3>
+
+    <a href="{{ path('app_pesanan_new') }}" class="btn btn-sm btn-primary me-2">Tambah Data</a>
+    
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Pemesan</th>
+                <th>Barang</th>
+                <th>Jumlah</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pesanan in pesanans %}
+            <tr>
+                <td>{{ pesanan.id }}</td>
+                <td>{{ pesanan.pemesan }}</td>
+                <td>{{ pesanan.nama }}</td>
+                <td>{{ pesanan.jumlah }}</td>
+                <td>
+                    <a href="{{ path('app_pesanan_edit', {'id': pesanan.id}) }}" class="btn btn-success me-2 btn-sm">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    </div>
+  </div>
+</div>
+{% endblock %}

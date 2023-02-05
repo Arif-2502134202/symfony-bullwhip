@@ -1,0 +1,17 @@
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block body %}
+<div class="container">
+{% include 'navbar/manajerNavbar.html.twig' %} 
+<div class="d-grid gap-2 col-6 mx-auto">
+<div class="text-center">
+    User : {{ app.session.get('userName') }} : {{ app.session.get('roleName') }}
+    
+</div>
+<div>
+    {{ render_chart(chart, {'class': 'my-chart'}) }}
+</div>
+{% endblock %}

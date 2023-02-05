@@ -1,0 +1,14 @@
+<nav class="navbar">
+  <form class="container-fluid justify-content-start">
+    <a href="{{ path('app_produksi_home') }}" class="btn btn-sm btn-success me-2">Home</a>
+    <a href="{{ path('app_produksi_order') }}" class="btn btn-sm btn-success me-2">Pesanan</a>
+    <a href="{{ path('app_produksi_index') }}" class="btn btn-sm btn-success me-2">Produksi</a>
+    <a href="{{ path('app_logout_index') }}" class="btn btn-sm btn-secondary">Sign Out</a>
+     
+    <div class="text-center">
+    User : {{ app.session.get('userName') }}
+    </div>  
+  </form>
+  
+    
+</nav>
